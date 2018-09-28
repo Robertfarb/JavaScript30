@@ -25,6 +25,7 @@ fetch(endpoint)
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
     const regex = new RegExp(wordToMatch, 'gi');
+    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
     return place.city.match(regex) || place.state.match(regex);
   })
 }
