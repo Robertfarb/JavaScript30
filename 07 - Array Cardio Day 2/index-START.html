@@ -25,10 +25,12 @@
     ];
 
     const isAdult = people.some((person) => {
-      if (person.year <= 1994) {
+      if (currentYear - person.year >= 19) {
         return true;
       }
     })
+    
+    console.log(isAdult);
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
