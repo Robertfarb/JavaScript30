@@ -109,7 +109,11 @@
       checkBoxes.forEach(checkBox => {
         console.log(checkBox);
         if (checkBox === this || checkBox === lastChecked) {
-          inBetween != inBetween;
+          inBetween = !inBetween;
+        }
+
+        if (inBetween) {
+          checkBox.checked = true;
         }
       })
     }
