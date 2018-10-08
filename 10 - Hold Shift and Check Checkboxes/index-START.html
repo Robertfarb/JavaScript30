@@ -57,7 +57,6 @@
    The following is a common layout you would see in an email client.
 
    When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
-
   -->
   <div class="inbox">
     <div class="item">
@@ -109,6 +108,7 @@
       checkBoxes.forEach(checkBox => {
         console.log(checkBox);
         if (checkBox === this || checkBox === lastChecked) {
+          debugger;
           inBetween = !inBetween;
         }
 
@@ -117,6 +117,7 @@
         }
       })
     }
+
     lastChecked = this;
   }
 
