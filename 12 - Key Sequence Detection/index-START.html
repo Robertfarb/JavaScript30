@@ -9,10 +9,11 @@
 <body>
 <script>
   const keysPressed = [];
+  const secretCode = 'robfarb';
   window.addEventListener('keyup', (e) => {
-    // console.log(e.key)
     keysPressed.push(e.key)
     console.log(keysPressed)
+    if (keysPressed)
   })
 </script>
 </body>
