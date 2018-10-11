@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
-  <script type="text/ javascript" src="http://www.cornify.com/js/cornify.js"></script>
-
 </head>
 <body>
+  <script type="text/ javascript" src="http://www.cornify.com/js/cornify.js"></script>
 <script>
   const keysPressed = [];
   const secretCode = 'robfarb';
@@ -17,9 +16,11 @@
     console.log(keysPressed);
 
     if (keysPressed.join("") === "robfarb") {
-      alert("YOU WIN!")
+      console.log("YOU WIN!");
+      cornify_add();
     }
   })
+
 
 </script>
 </body>
