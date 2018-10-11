@@ -10,11 +10,17 @@
 <script>
   const keysPressed = [];
   const secretCode = 'robfarb';
+
   window.addEventListener('keyup', (e) => {
     keysPressed.push(e.key)
-    console.log(keysPressed)
-    if (keysPressed)
+    keysPressed.splice(-secretCode.length - 1, keysPressed.length - secretCode.length)
+    console.log(keysPressed);
+
+    if (keysPressed.join("") === "robfarb") {
+      alert("YOU WIN!")
+    }
   })
+
 </script>
 </body>
 </html>
