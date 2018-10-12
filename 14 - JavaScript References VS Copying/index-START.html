@@ -34,10 +34,16 @@
     // and we want to make a copy of it.
 
     // You might think we can just do something like this:
-    team[3] = 'Lux';
-    console.log(players, team);
+    // This will go back and update the reference, so it will reference to the original
+    // value
+    // team[3] = 'Lux';
+    // console.log(players, team);
 
     // however what happens when we update that array?
+    const team2 = Array.from(team);
+    team2[3] = 'lux';
+
+    // console.log(players, team2);
 
     // now here is the problem!
 
@@ -52,6 +58,9 @@
     // or create a new array and concat the old one in
 
     // or use the new ES6 Spread
+    const team4 = [...players] // This will take every item out of our iterable and
+                              // Put it into a containing array
+    team4[3] = 'heeeee hawwww';
 
     // now when we update it, the original one isn't changed
 
@@ -63,7 +72,11 @@
       age: 80
     };
 
-    // and think we make a copy:
+    // and think we make a copy
+    const captain = person; // if we change captain's number person will also be mutated
+    captain.number = 99;
+
+    console.log(person);
 
     // how do we take a copy instead?
 
