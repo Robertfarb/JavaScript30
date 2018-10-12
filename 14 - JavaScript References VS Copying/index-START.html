@@ -8,13 +8,34 @@
 
   <script>
     // start with strings, numbers and booleans
+    // let age = 10001;
+    // let age2 = age;
+
+    
+    // console.log(age, age2);
+    // age = 200;
+
+    // // Value of age goes into the varibale at the same time.. we
+    // console.log(age, age2);
+
+    // let name = 'rob';
+    // let name2 = name;
+
+    // console.log(name, name2);
+
+    // name='wesley';
+    // console.log(name, name2)
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const team = players;
 
+   
     // and we want to make a copy of it.
 
     // You might think we can just do something like this:
+    team[3] = 'Lux';
+    console.log(players, team);
 
     // however what happens when we update that array?
 
