@@ -36,16 +36,26 @@
 
 <script>
   const hero = document.querySelector(".hero");
-  const text = document.querySelector(".h1");
+  const text = document.querySelector("h1");
+  const wonk = 100; //100px
 
   function shadow (e) {
-    const { offSetWidth: width, offsetHeight: height } = hero;
-    let { offsetX: x, offsety: y } = e;
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    let { offsetX: x, offsetY: y } = e;
 
-    if (this != event.target) {
-      console.log(this);
+    if (this != e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
     }
-    console.log(x, y);
+
+    const xWonk = (x / width * wonk) - (wonk / 2);
+    const yWonk = (x / height * wonk) - (wonk / 2);
+
+    text.style.textShadow = `
+      ${xWonk}px ${yWonk}px 0 red,
+      ${xWonk * -1}px ${yWonk}px 0 blue
+    `;
+
   }
 
   hero.addEventListener('mousemove', shadow);
