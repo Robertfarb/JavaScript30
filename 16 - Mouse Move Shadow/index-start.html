@@ -48,8 +48,8 @@
       y = y + e.target.offsetTop;
     }
 
-    const xWonk = (x / width * wonk) - (wonk / 2);
-    const yWonk = (x / height * wonk) - (wonk / 2);
+    const xWonk = Math.round((x / width * wonk) - (wonk / 2));
+    const yWonk = Math.round((x / height * wonk) - (wonk / 2));
 
     text.style.textShadow = `
       ${xWonk}px ${yWonk}px 0 red,
