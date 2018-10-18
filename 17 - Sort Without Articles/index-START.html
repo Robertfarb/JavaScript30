@@ -45,32 +45,34 @@
 
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
-let noArticleBands = [];
+// let noArticleBands = [];
+// const bandList = document.querySelector("#bands");
 
-// let sortedBands = bands.sort(compare);
-// console.log(sortedBands);
+// // let sortedBands = bands.sort(compare);
+// // console.log(sortedBands);
 
 function removeArticles (band) {
   let len = band.length;
   if (band.slice(0, 3) === "The") {
-    noArticleBands.push(band.slice(4, len));
+    return band.slice(4, len);
   } else if (band.slice(0, 2) == "An") {
-    noArticleBands.push(band.slice(3, len));
+    return band.slice(3, len);
   } else if (band.slice(0, 1) === "A") {
-    noArticleBands.push(band.slice(2, len));
+    return band.slice(2, len);
   } else {
-    noArticleBands.push(band);
+    return band;
   }
 }
 
-bands.forEach((band) => {
-  removeArticles(band);
-})
+const sortedBands = bands.sort((a, b) => {
+  return removeArticles(a) > removeArticles(b) ? 1 : -1;
+});
 
-const sortedBands = noArticleBands.sort();
-sortedBands.forEach((band) => {
-  if (bands.includes(band))
-})
+function strip(bandName) {
+  return bandName.replace(/^(a |the |an)/i, '').trim();
+}
+
+console.log(sortedBands);
 
 </script>
 
