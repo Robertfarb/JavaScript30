@@ -182,6 +182,14 @@
     </li>
   </ul>
 <script>
+  let totalTime = 0;
+  const videoLi = Array.from(document.querySelectorAll("li"));
+  // videoLi.forEach(video => console.log(video.dataset.time));
+
+  const reducer = (a, b) => a + b;
+
+  videoLi.reduce(reducer, totalTime);
+  console.log(totalTime);
 </script>
 </body>
 </html>
