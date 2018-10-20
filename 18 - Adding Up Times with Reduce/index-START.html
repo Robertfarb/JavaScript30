@@ -182,11 +182,14 @@
     </li>
   </ul>
 <script>
-  let totalTime = 0;
-  const videoLi = Array.from(document.querySelectorAll("li"));
-  // videoLi.forEach(video => console.log(video.dataset.time));
+  const videoLi = Array.from(document.querySelectorAll('[data-time]'));
+  const seconds = videoLi
+    .map(node => node.dataset.time)
+    .map(timeCode => {
+      const [mins, secs] = timeCode.split(':').map(parseFloat);
+      return (mins * 60) + secs;
+    });
 
-  const reducer = (a, b) => a + b;
 
   videoLi.reduce(reducer, totalTime);
   console.log(totalTime);
