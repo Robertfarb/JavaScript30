@@ -23,7 +23,7 @@ function paintToCanvas() {
   return setInterval(() => {
     ctx.drawImage(video, 0, 0, width, height);
   }, 16);
-} 
+}
 
 getVideo();
-paintToCanvas();
+video.addEventListener('canplay', paintToCanvas);
