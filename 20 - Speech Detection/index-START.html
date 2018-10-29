@@ -11,7 +11,6 @@
 
 <script>
   // SpeechRecognition is a global variable that lives in the browser.
-
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const recognition = new SpeechRecognition();
@@ -36,7 +35,6 @@
 
   recognition.addEventListener('end', recognition.start);
   recognition.start();
-    
 </script>
 
 
