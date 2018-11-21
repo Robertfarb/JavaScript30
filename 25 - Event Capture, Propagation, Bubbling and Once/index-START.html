@@ -44,11 +44,14 @@
   // Event Bubbling will cause this to trigger click events on all divs
   function logText(e) {
     console.log(this.classList.value);
-    e.stopPropagation();
+    e.stopPropagation(); // Stops the event from bubbling
   } 
 
   divs.forEach(div => {
-    div.addEventListener('click', logText, { capture: false });
+    div.addEventListener('click', logText, { 
+      capture: false,
+      once: true // This will listen for a click once, then unbind itself from the div
+    });
 });
 
 </script>
