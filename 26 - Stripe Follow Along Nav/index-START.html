@@ -5,7 +5,7 @@
   <title>Follow Along Nav</title>
 </head>
 <body>
-  <h2>Cool</h2>
+  <!-- <h2>Cool</h2> -->
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -237,12 +237,14 @@
 
     const coords = {
       height: dropDownCoords.height,
-      width: dropDownCoords.width
+      width: dropDownCoords.width,
+      top: dropDownCoords.top - navCoords.top,
+      left: dropDownCoords.left - navCoords.left
     }
 
     background.style.setProperty('width', `${coords.width}px`);
     background.style.setProperty('height', `${coords.width}px`);
-
+    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
   }
 
   function handleLeave() {
