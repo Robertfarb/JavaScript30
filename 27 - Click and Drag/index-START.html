@@ -57,8 +57,13 @@
       slider.classList.remove('active');
     });
 
-    slider.addEventListener('mousemove', () => {
+    slider.addEventListener('mousemove', (e) => {
       if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const moveX = (x - startX) * 2.5;
+      
+      slider.scrollLeft = scrollLeft - moveX;
     });
   </script>
 
