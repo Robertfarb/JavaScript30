@@ -19,17 +19,29 @@
   const bar = speed.querySelector('.speed-bar');
   const video = document.querySelector('.flex');
 
+  let mouseDown;
+  speed.addEventListener('mousedown', () => {
+    mouseDown = true;
+  });
+
+  speed.addEventListener('mouseup',  () => {
+    mouseDown = false;
+  });
+
   speed.addEventListener('mousemove', function(e) {
     const y = e.pageY - this.offsetTop;
     percent = y / this.offsetHeight;
     const min = 0.4;
     const max = 4;
-    const height = Math.round(percent * 100) + '%';
-    const playbackRate = percent * (max - min) + min;
 
-    bar.style.height = height;
-    bar.textContent = `${playbackRate.toFixed(2)}x`;
-    video.playbackRate = playbackRate.toFixed(2);
+    if (mouseDown) {
+      const height = Math.round(percent * 100) + '%';
+      const playbackRate = percent * (max - min) + min;
+
+      bar.style.height = height;
+      bar.textContent = `${playbackRate.toFixed(2)}x`;
+      video.playbackRate = playbackRate;
+    }
   });
 </script>
 </body>
