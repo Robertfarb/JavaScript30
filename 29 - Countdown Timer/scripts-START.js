@@ -32,3 +32,8 @@ function displayEndTime(timeStamp) {
   const end = new date(timeStamp);
 }
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+  console.log(button.dataset)
+  button.addEventListener('click', () => timer(parseInt(button.dataset.time)))
+});
