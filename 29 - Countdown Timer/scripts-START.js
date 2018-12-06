@@ -29,7 +29,13 @@ function displayTimeLeft(seconds) {
 }
 
 function displayEndTime(timeStamp) {
-  const end = new date(timeStamp);
+  const end = new Date(timeStamp);
+  const hour = end.getHours();
+  const minutes = end.getMinutes();
+  const endTime = document.querySelector(".display__end-time");
+
+  endTime.textContent = `Be Back At ${hour > 12 ? hour - 12 : hour}:${minutes < 10 ?
+  '0' : ''}${minutes}`
 }
 
 const buttons = document.querySelectorAll('button');
